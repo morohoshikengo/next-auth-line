@@ -14,6 +14,7 @@ const Page: FC<Props> = async ({ authenticated, unauthenticated }) => {
     <>
       <p>ログイン後</p>
       <LoginButtonOut />
+      {session}
     </>
   );
 };
