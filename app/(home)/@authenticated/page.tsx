@@ -1,5 +1,6 @@
 import { getServerSession } from "next-auth";
 import { FC, ReactNode } from "react";
+import { LoginButtonOut } from "./LogoutButton";
 
 interface Props {
   authenticated: ReactNode;
@@ -12,6 +13,7 @@ const Page: FC<Props> = async ({ authenticated, unauthenticated }) => {
   return (
     <>
       <p>ログイン後</p>
+      <LoginButtonOut />
     </>
   );
 };
