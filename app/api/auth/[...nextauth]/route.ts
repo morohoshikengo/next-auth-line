@@ -6,6 +6,15 @@ const options: AuthOptions = {
     LineProvider({
       clientId: process.env.LINE_CLIENT_ID ?? '',
       clientSecret: process.env.LINE_CLIENT_SECRET ?? '',
+      ...(typeof process.env.LINE_CLIENT_ID === 'string' && typeof process.env.LINE_CLIENT_SECRET === 'string'
+        ? {
+            authorization: {
+              params: {
+                scope: "profile openid email",
+              }
+            }
+          }
+        : {}),
     }),
   ],
 };
